@@ -1,7 +1,0 @@
-
-1) Defina formalmente o problema de ordenação.
-
-
-2) Forneça um exemplo de aplicação real que envolva o problema de ordenação e de
-encontrar o menor valor.
-
