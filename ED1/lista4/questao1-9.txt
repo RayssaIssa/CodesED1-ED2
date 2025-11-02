@@ -1,0 +1,65 @@
+        Lista 4 - Estrutura de Dados 1 - Rayssa Costa
+
+1- Uma pilha é uma estrutura de dados que opera sobe o conceito de LIFO, o último a entrar é o primeiro a sair. Nela todas as modificações podem ser feitas apenas através do último elemento da pilha.
+
+2- A analogia é a de uma pilha de livros, ou uma pilha de pratos, onde o último a ser colocado é sempre o primeiro a ser retirado.
+
+3- Em uma pilha, se sub-entende que os itens estão empilhados, um acima do outro, com o item de cima bloqueando o acesso aos item de baixo. Por esse motivo, suas modificações são feitas atráves do item que esta no topo, ou seja, o último item que foi adicionado.
+
+4- A propriedade é a LIFO - Last In, First Out - Último a entrar, primeiro a sair.
+
+5- O conjunto de operações de uma pilha são:
+    Criar Pilha: cria uma nova pilha;
+    Pilha vazia: verifica se há itens na pilha;
+    Pilha Cheia: verifica se a pilha está cheia (essa função não existe para uma pilha dinamicamente alocada);
+    Inserir novo nó: adiciona um novo item no topo da pilha;
+    Remover nó: remove o último item adicionado na pilha;
+
+6- A implementação de uma pilha por meio de um arranjo é a situação de uma pilha com memória estaticamente alocada, ou seja, quando o tamanho da pilha é fixo. Nesse caso, a criação de uma pilha define sua variavél topo com algum valor invalido para um arranjo, como -1, e a cada inserção na pilha avançamos o topo em uma posição, e nas remoções retrocedemos o topo em uma posição. Para esse tipo de pilha há a operação de verificar se a pilha está cheia, pois após alcançar o limite (tamanho - 1) não será possível inserir mais elementos na pilha.
+
+7- O vetor dos elementos e o indice de topo
+
+8- 
+    typedef struct{
+        int topo;
+        int pilha[10];
+    } *Pilha;
+
+9- 
+    void inicializaPilha(Pilha *p){
+        p->topo = -1;
+    }
+    int pilhaCheia(Pilha *p, int tamanho){
+        if(p->topo == tamanho-1){
+            printf("Pilha cheia\n");
+            return 1;
+        }else{
+            return 0;
+        }
+    }
+    int pilhaVazia(Pilha *p){
+        if(p->topo == -1){
+            printf("Pilha vazia\n");
+            return 1;
+        }else{
+            return 0;
+        }
+    }
+    void push(Pilha *p, int tamanho, int valor){
+        if(pilhaCheia(p, tamanho)){
+            break;
+        }else{
+            p->topo++;
+            p->pilha[p->topo] = valor;
+            printf("\nValor inserido");
+        }
+    }
+    void pop(Pilha *p){
+        if(pilhaVazia(p)){
+            break;
+        }else{
+            p->topo--;
+        }
+    }
+
+10 - Letra (D) 22
